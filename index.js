@@ -26,6 +26,18 @@ function prepend(orig) {
   }
 }
 
+function append(orig) {
+  if (orig) {
+    if (orig.slice(-1) !== '/') {
+      return orig + '/';
+    } else {
+      return orig;
+    }
+  } else {
+    return '';
+  }
+}
+
 function normalizePath(path, isHostname) {
   if (isHostname) {
     return removeTrailings(path);
@@ -35,6 +47,7 @@ function normalizePath(path, isHostname) {
 }
 
 module.exports = {
+  append: append,
   removeTrailings: removeTrailings,
   removeTrailing: removeTrailing,
   prepend: prepend,

@@ -1,5 +1,5 @@
 {
-  "name": "slash",
+  "name": "slash-helper",
   "version": "1.0.0",
   "description": "Remove trailing slashes and prepend slash to a URL",
   "main": "index.js",

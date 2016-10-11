@@ -50,6 +50,22 @@ describe('prepend', function () {
   });
 });
 
+describe('append', function () {
+  it('should append a slash', function(done) {
+    assert.equal(slash.append('abc'), 'abc/');
+    assert.equal(slash.append('abc/'), 'abc/');
+    assert.equal(slash.append('/'), '/');
+    done();
+  });
+  
+  it('should handle empty string or undefined', function(done) {
+    assert.equal(slash.append(''), '');
+    assert.equal(slash.append(), '');
+    assert.equal(slash.append(undefined), '');
+    done();
+  });
+});
+
 describe('normalizePath', function () {
   it('should remove trailing slashed and prepend a slash', function(done) {
     assert.equal(slash.normalizePath('abc/'), '/abc');
